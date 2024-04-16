@@ -12,10 +12,6 @@ This utility ensures that each chunk is at least as large as the desired size an
 - Works with pre-sorted DataFrames to maintain order.
 
 
-## Requirements
-This module requires Python 3.6+ and the pandas library.
-
-
 ## Components
 The module comprises several components, including:
 * `DateGenerator`: Generates a sequence of dates for creating DataFrames.
@@ -23,11 +19,39 @@ The module comprises several components, including:
 * `main.py`: Orchestrates the generation of data, chunking, and validation of chunks.
 
 
+## Setup
+
+- Python 3.8+ required.
+- Dependencies are listed in the `requirements.txt`.
+
+``` 
+# Create a virtual environment in your project directory
+python -m venv venv
+
+# Activate the virtual environment
+    # On Windows:
+    venv\Scripts\activate
+    # On macOS and Linux:
+    source venv/bin/activate
+
+# Install the dependencies using pip
+pip install -r requirements.txt
+
+# Run the script
+python main.py
+``` 
+
+
 ## Testing
 The module includes unit tests covering key functionalities:
 * Validating the integrity of chunk sizes.
 * Ensuring no date overlap between chunks.
 * Checking for proper handling of edge cases such as minimum chunk sizes larger than the DataFrame size.
+
+Run the tests using the unittest module:
+``` 
+python -m unittest test_dataframe_chunker.py
+``` 
 
 
 ## Example
