@@ -21,3 +21,10 @@ The module comprises several components, including:
 * `DateGenerator`: Generates a sequence of dates for creating DataFrames.
 * `DataFrameChunker`: Handles the logic for dividing the DataFrame into the desired chunks based on the date column.
 * `main.py`: Orchestrates the generation of data, chunking, and validation of chunks.
+
+
+## Testing
+The module includes unit tests covering key functionalities:
+* Validating the integrity of chunk sizes.
+* Ensuring no date overlap between chunks.
+* Checking for proper handling of edge cases such as minimum chunk sizes larger than the DataFrame size.
