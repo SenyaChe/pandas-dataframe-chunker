@@ -5,3 +5,4 @@
 venv/
 env/
 src/utils/debug.log
+__pycache__

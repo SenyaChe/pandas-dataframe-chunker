@@ -50,6 +50,7 @@ def main(num_rows=5000000, start_date='2023-01-01 00:00:00', date_column='dt', m
                 logging.info(f"Last chunk has {len(chunks[-1])} rows.")
             else:
                 logging.info("Only one chunk generated, also reported as the last chunk.")
+            return chunks
 
     except ValueError as e:
         logging.error(f"Error in processing: {e}")
