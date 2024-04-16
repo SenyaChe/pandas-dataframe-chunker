@@ -15,7 +15,6 @@ def generate_data(start_date: str, num_rows: int) -> pd.DataFrame:
     logging.info(f"Created data frame with dates, {num_rows} rows.")
     return pd.DataFrame(dates, columns=['dt'])
 
-
 def chunk_data(df: pd.DataFrame, date_column: str, min_chunk_size: int) -> List[pd.DataFrame]:
     chunker = DataFrameChunker(df, date_column, min_chunk_size)
     chunks = chunker.chunk_dataframe_optimized()
@@ -24,7 +23,6 @@ def chunk_data(df: pd.DataFrame, date_column: str, min_chunk_size: int) -> List[
     logging.info(f"Created chunks list with {len(chunks)} chunks.")
     return chunks
 
-
 def validate_chunks(chunks: List[pd.DataFrame], min_size:int) -> None:
     for chunk in chunks[:-1]:
         if chunk.shape[0] < min_size:
@@ -32,7 +30,6 @@ def validate_chunks(chunks: List[pd.DataFrame], min_size:int) -> None:
     if chunks and chunks[-1].shape[0] < 1:
         raise ValueError("The last chunk is empty.")
     logging.info("All chunks are correctly sized according to the specified minimum size.")
-
 
 def main(num_rows=5000000, start_date='2023-01-01 00:00:00', date_column='dt', min_chunk_size=200) -> List[pd.DataFrame]:
     try:
