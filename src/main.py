@@ -3,8 +3,8 @@ import logging
 from typing import List
 
 import utils.logger
-from utils.date_generator import DateGenerator
-from utils.dataframe_chunker import DataFrameChunker
+from utils.data_generator.date_generator import DateGenerator
+from utils.data_processing.dataframe_chunker import DataFrameChunker
 
 
 def generate_data(start_date: str, num_rows: int) -> pd.DataFrame:

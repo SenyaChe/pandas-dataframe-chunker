@@ -2,7 +2,7 @@ import unittest
 import pandas as pd
 import time
 
-from split_to_chunks_project.src.utils.dataframe_chunker import DataFrameChunker
+from src.utils.data_processing.dataframe_chunker import DataFrameChunker
 
 
 class TestDataFrameChunker(unittest.TestCase):
