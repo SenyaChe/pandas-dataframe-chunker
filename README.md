@@ -28,3 +28,54 @@ The module includes unit tests covering key functionalities:
 * Validating the integrity of chunk sizes.
 * Ensuring no date overlap between chunks.
 * Checking for proper handling of edge cases such as minimum chunk sizes larger than the DataFrame size.
+
+
+## Example
+1. Dataframe input data:
+``` 
+2023-01-01 00:00:01
+2023-01-01 00:00:01
+2023-01-01 00:00:02
+2023-01-01 00:00:02
+2023-01-01 00:00:02
+2023-01-01 00:00:03
+```
+
+2. For a chunk size between 1 and 2, the result is 3 chunks:
+``` 
+# 1-st chunk
+2023-01-01 00:00:01
+2023-01-01 00:00:01
+
+# 2-nd chunk
+2023-01-01 00:00:02
+2023-01-01 00:00:02
+2023-01-01 00:00:02
+
+# 3-rd chunk
+2023-01-01 00:00:03
+``` 
+
+3. For a chunk size between 3 and 5, the result is 2 chunks:
+``` 
+# 1-st chunk
+2023-01-01 00:00:01
+2023-01-01 00:00:01
+2023-01-01 00:00:02
+2023-01-01 00:00:02
+2023-01-01 00:00:02
+
+# 2-nd chunk
+2023-01-01 00:00:03
+``` 
+
+4. For chunk sizes 6 and above, the result is the entire frame:
+``` 
+# the entire dataframe as a single chunk
+2023-01-01 00:00:01
+2023-01-01 00:00:01
+2023-01-01 00:00:02
+2023-01-01 00:00:02
+2023-01-01 00:00:02
+2023-01-01 00:00:03
+``` 
