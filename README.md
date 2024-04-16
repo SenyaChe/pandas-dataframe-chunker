@@ -38,7 +38,7 @@ python -m venv venv
 pip install -r requirements.txt
 
 # Run the script
-python main.py
+python src/main.py
 ``` 
 
 
